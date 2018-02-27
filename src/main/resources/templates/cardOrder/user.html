@@ -28,15 +28,24 @@
 
                             <div class="field" th:classappend="${form.hasErrors('kanjiName')} ? 'error'">
                                 <label>お名前（漢字）</label>
-                                <input type="text" name="kanjiName" th:value="${form.kanjiName}"/>
+                                姓：
+                                <input type="text" style = "width:150px;" name="kanjiName" th:value="${form.kanjiName}"/>
+                                名：
+                                <input type="text" style = "width:150px;" name="kanjiName" th:value="${form.kanjiName}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('kanaName')} ? 'error'">
                                 <label>お名前（カナ）</label>
-                                <input type="text" name="kanaName" th:value="${form.kanaName}"/>
+                                セイ:
+                                <input type="text" style = "width:150px;" name="kanaName" th:value="${form.kanaName}"/>
+                                メイ:
+                                <input type="text" style = "width:150px" name="kanaName" th:value="${form.kanaName}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('alphabetName')} ? 'error'">
                                 <label>お名前（ローマ字）</label>
-                                <input type="text" name="alphabetName" th:value="${form.alphabetName}"/>
+                                姓（Last name）
+                                <input type="text"style = "width:150px;"  name="alphabetName" th:value="${form.alphabetName}"/>
+                                名（first name）
+                                <input type="text" style = "width:150px;" name="alphabetName" th:value="${form.alphabetName}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('gender')} ? 'error'">
                                 <label>性別</label>
@@ -49,7 +58,9 @@
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('zipCode')} ? 'error'">
                                 <label>郵便番号</label>
-                                <input type="text" class="zipcode" name="zipCode" th:value="${form.zipCode}"/>
+                                <input type="text" style = "width:100px;" class="zipcode" name="zipCode" th:value="${form.zipCode}"/>
+                                 -
+                                <input type="text" style = "width:100px;" class="zipcode" name="zipCode" th:value="${form.zipCode}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('address')} ? 'error'">
                                 <label>ご住所</label>
@@ -57,11 +68,19 @@
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('homePhoneNumber')} ? 'error'">
                                 <label>自宅電話番号</label>
-                                <input type="text" name="homePhoneNumber" th:value="${form.homePhoneNumber}"/>
+                                <input type="text" style = "width:100px;"  name="homePhoneNumber" th:value="${form.homePhoneNumber}"/>
+                                 -
+                                <input type="text" style = "width:100px;"  name="homePhoneNumber" th:value="${form.homePhoneNumber}"/>
+                                 -
+                                <input type="text" style = "width:100px;"  name="homePhoneNumber" th:value="${form.homePhoneNumber}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('mobilePhoneNumber')} ? 'error'">
                                 <label>携帯電話番号</label>
-                                <input type="text" name="mobilePhoneNumber" th:value="${form.mobilePhoneNumber}"/>
+                                <input type="text" style = "width:100px;" name="mobilePhoneNumber" th:value="${form.mobilePhoneNumber}"/>
+                                 -
+                                <input type="text" style = "width:100px;" name="mobilePhoneNumber" th:value="${form.mobilePhoneNumber}"/>
+                                 -
+                                <input type="text" style = "width:100px;" name="mobilePhoneNumber" th:value="${form.mobilePhoneNumber}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('emailAddress')} ? 'error'">
                                 <label>メールアドレス</label>
