@@ -26,9 +26,7 @@ public class CardOrderForm extends FormBase {
     private String alphabetName1;
 
     @NotBlank
-    @Size(max = 10)
-    @Pattern(regexp = "\\d{4}/\\d{1,2}/\\d{1,2}$")
-    private String dateOfBirth;
+    private String yearOfBirth;
 
     @NotBlank
     @Size(max = 6)

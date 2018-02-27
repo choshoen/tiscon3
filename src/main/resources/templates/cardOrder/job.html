@@ -33,7 +33,8 @@
                                 <input type="text" name="employerName" th:value="${form.employerName}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employerZipCode')} ? 'error'">
-                                <label>お勤め先郵便番号</label>
+
+                                <label>お勤め先郵便番号(半角数字</label>
                                 <input type="text"  style = "width:100px;" name="employerZipCode" th:value="${form.employerZipCode}"/>
                                  -
                                 <input type="text" style = "width:100px;"  name="employerZipCode1" th:value="${form.employerZipCode1}"/>
@@ -43,7 +44,8 @@
                                 <input type="text" name="employerAddress" th:value="${form.employerAddress}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employerPhoneNumber')} ? 'error'">
-                                <label>お勤め先電話番号</label>
+
+                                <label>お勤め先電話番号(半角数字)</label>
                                 <input type="text"  style = "width:100px;" name="employerPhoneNumber" th:value="${form.employerPhoneNumber}"/>
                                  -
                                 <input type="text"  style = "width:100px;" name="employerPhoneNumber1" th:value="${form.employerPhoneNumber1}"/>
@@ -89,7 +91,7 @@
                                 <input type="text" name="position" th:value="${form.position}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employeeLength')} ? 'error'">
-                                <label>勤続年数</label>
+                                <label>勤続年数(半角数字)</label>
                                 <input type="text" class="number" name="employeeLength" th:value="${form.employeeLength}"/><span class="unit">年</span >
                             </div>
 
@@ -98,7 +100,7 @@
                             <input type="hidden" name="kanaName" th:value="${form.kanaName}"/>
                             <input type="hidden" name="alphabetName" th:value="${form.alphabetName}"/>
                             <input type="hidden" name="gender" th:value="${form.gender}"/>
-                            <input type="hidden" name="dateOfBirth" th:value="${form.dateOfBirth}"/>
+                            <input type="hidden" name="yearOfBirth" th:value="${form.yearOfBirth}"/>
                             <input type="hidden" name="zipCode" th:value="${form.zipCode}"/>
                             <input type="hidden" name="address" th:value="${form.address}"/>
                             <input type="hidden" name="homePhoneNumber" th:value="${form.homePhoneNumber}"/>

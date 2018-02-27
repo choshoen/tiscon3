@@ -27,21 +27,22 @@
                             <div class="ui horizontal divider">ご本人について</div>
 
                             <div class="field" th:classappend="${form.hasErrors('kanjiName')} ? 'error'">
-                                <label>お名前（漢字）</label>
+
+                                <label>お名前（漢字） (例)姓:山田　名：太郎</label>
                                 姓：
                                 <input type="text" style = "width:150px;" name="kanjiName" th:value="${form.kanjiName}"/>
                                 名：
                                 <input type="text" style = "width:150px;" name="kanjiName1" th:value="${form.kanjiName1}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('kanaName')} ? 'error'">
-                                <label>お名前（カナ）</label>
+                                <label>お名前（カナ）(例)姓:ヤマダ　名：タロウ</label>
                                 セイ:
                                 <input type="text" style = "width:150px;" name="kanaName" th:value="${form.kanaName}"/>
                                 メイ:
                                 <input type="text" style = "width:150px" name="kanaName1" th:value="${form.kanaName1}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('alphabetName')} ? 'error'">
-                                <label>お名前（ローマ字）</label>
+                                <label>お名前（ローマ字）(例)姓:YAMADA　名：TARO</label>
                                 姓（Last name）
                                 <input type="text"style = "width:150px;"  name="alphabetName" th:value="${form.alphabetName}"/>
                                 名（first name）
@@ -52,12 +53,83 @@
                                 <input type="radio" name="gender" value="male" th:checked="${form.gender}=='male'"/>男性
                                 <input type="radio" name="gender" value="female" th:checked="${form.gender}=='female'"/>女性
                             </div>
-                            <div class="field" th:classappend="${form.hasErrors('dateOfBirth')} ? 'error'">
-                                <label>生年月日</label>
-                                <input type="text" name="dateOfBirth" th:value="${form.dateOfBirth}"/>
+
+                            <div class="field">
+                                <label>生年月日(半角数字)</label>
                             </div>
+                                <div style="float:left;width:100px" th:classappend="${form.hasErrors('yearOfBirth')} ? 'error'">
+                                    <select name="yearOfBirth">
+                                        <option value="">-</option>
+                                    <option value="1990" th:selected="${form.yearOfBirth}=='1990'"/>1990</option>
+                                    <option value="1991">1991</option>
+                                    <option value="1992">1992</option>
+                                    <option value="1993">1993</option>
+                                    <option value="1994">1994</option>
+                                    <option value="1995">1995</option>
+                                    <option value="1996">1996</option>
+                                    <option value="1997">1997</option>
+                                    <option value="1998">1998</option>
+                                    <option value="1999">1999</option>
+                                </select>
+                                </div>
+                            <div style="float:left;">年</div>
+                                <div style="float:left;width:100px">
+                                     <select name="month">
+                                    <option value="">-</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                                    </div>
+                            <div style="float:left;">月</div>
+                                <div style="float:left;width:100px">
+                                     <select name="day">
+                                    <option value="">-</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                </select>
+                                </div>
+                            <div style="float:left;">日</div>
                             <div class="field" th:classappend="${form.hasErrors('zipCode')} ? 'error'">
-                                <label>郵便番号</label>
+                                <label>郵便番号(半角数字)</label>
                                 <input type="text" style = "width:100px;" class="zipcode" name="zipCode" th:value="${form.zipCode}"/>
                                  -
                                 <input type="text" style = "width:100px;" class="zipcode" name="zipCode1" th:value="${form.zipCode1}"/>
@@ -67,7 +139,7 @@
                                 <input type="text" name="address" th:value="${form.address}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('homePhoneNumber')} ? 'error'">
-                                <label>自宅電話番号</label>
+                                <label>自宅電話番号(半角数字)</label>
                                 <input type="text" style = "width:100px;"  name="homePhoneNumber" th:value="${form.homePhoneNumber}"/>
                                  -
                                 <input type="text" style = "width:100px;"  name="homePhoneNumber1" th:value="${form.homePhoneNumber1}"/>
@@ -75,7 +147,7 @@
                                 <input type="text" style = "width:100px;"  name="homePhoneNumber2" th:value="${form.homePhoneNumber2}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('mobilePhoneNumber')} ? 'error'">
-                                <label>携帯電話番号</label>
+                                <label>携帯電話番号(半角数字)</label>
                                 <input type="text" style = "width:100px;" name="mobilePhoneNumber" th:value="${form.mobilePhoneNumber}"/>
                                  -
                                 <input type="text" style = "width:100px;" name="mobilePhoneNumber1" th:value="${form.mobilePhoneNumber1}"/>
@@ -83,7 +155,7 @@
                                 <input type="text" style = "width:100px;" name="mobilePhoneNumber2" th:value="${form.mobilePhoneNumber2}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('emailAddress')} ? 'error'">
-                                <label>メールアドレス</label>
+                                <label>メールアドレス(半角英数字)</label>
                                 <input type="text" name="emailAddress" th:value="${form.emailAddress}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('spouse')} ? 'error'">
@@ -104,11 +176,11 @@
                                 <input type="radio" name="houseClassification" value="その他" th:checked="${form.houseClassification}=='その他'"/>その他
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('debt')} ? 'error'">
-                                <label>ローン等のお借り入れ金額</label>
+                                <label>ローン等のお借り入れ金額(半角数字)</label>
                                 <input type="text" class="number" name="debt" th:value="${form.debt}"/><span class="unit">万円</span>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('income')} ? 'error'">
-                                <label>昨年の所得</label>
+                                <label>昨年の所得(半角数字)</label>
                                 <input type="text" class="number" name="income" th:value="${form.income}"/><span class="unit">万円</span>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('job')} ? 'error'">
