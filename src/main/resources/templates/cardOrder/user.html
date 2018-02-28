@@ -28,12 +28,13 @@
                             <div class="ui horizontal divider">ご本人について</div>
 
                             <div class="field" th:classappend="${form.hasErrors('kanjiName')} ? 'error'">
-
+                                <font color="red">必須</font>
                                 <label>お名前（漢字） (例)姓:山田　名：太郎</label>
                                 姓：<input type="text" style = "width:150px;" name="kanjiName" th:value="${form.kanjiName}"/>
                                 名：<input type="text" style = "width:150px;" name="kanjiName1" th:value="${form.kanjiName1}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('kanaName')} ? 'error'">
+                                <font color="red">必須</font>
                                 <label>お名前（カナ）(例)姓:ヤマダ　名：タロウ</label>
                                 セイ:
                                 <input type="text" style = "width:150px;" name="kanaName" th:value="${form.kanaName}"/>
@@ -41,6 +42,7 @@
                                 <input type="text" style = "width:150px" name="kanaName1" th:value="${form.kanaName1}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('alphabetName')} ? 'error'">
+                                <font color="red">必須</font>
                                 <label>お名前（ローマ字）(例)姓:YAMADA　名：TARO</label>
                                 姓（Last name）
                                 <input type="text"style = "width:150px;"  name="alphabetName" th:value="${form.alphabetName}"/>
@@ -48,12 +50,14 @@
                                 <input type="text" style = "width:150px;" name="alphabetName1" th:value="${form.alphabetName1}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('gender')} ? 'error'">
+                                <font color="red">必須</font>
                                 <label>性別</label>
                                 <input type="radio" name="gender" value="male" th:checked="${form.gender}=='male'"/>男性
                                 <input type="radio" name="gender" value="female" th:checked="${form.gender}=='female'"/>女性
                             </div>
 
                             <div class="field">
+                                <font color="red">必須</font>
                                 <label>生年月日</label>
                             </div>
                                 <div style="float:left;width:100px" th:classappend="${form.hasErrors('yearOfBirth')} ? 'error'">
@@ -198,6 +202,7 @@
                                 </div>
                             <div style="float:left;"> 日</div>
                             <div class="field">
+                                <font color="red">必須</font>
                                 <label>郵便番号(半角数字)</label>
                             </div>
                             <div class="field" style="float:left;width:100px" th:classappend="${form.hasErrors('zipCode')} ? 'error'">
@@ -209,6 +214,7 @@
                                 <input type="text" name="zipCode1" size="5" maxlength="4" onKeyUp="AjaxZip3.zip2addr('zipCode','zipCode1','address','address');" th:value="${form.zipCode1}"/>
                             </div>
                             <div class="field">
+                                <font color="red">必須</font>
                                 <label>ご住所（町名番地建物名）</label>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('address')} ? 'error'">
@@ -216,7 +222,8 @@
                                 <input type="text" name="address" size="40" th:value="${form.address}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('homePhoneNumber')} ? 'error'">
-                                <label>自宅電話番号(半角数字)</label>
+                                <font color="red">必須</font>
+                                <label>電話番号1(自宅・携帯)(半角数字)</label>
                                 <input type="text" style = "width:100px;"  name="homePhoneNumber" th:value="${form.homePhoneNumber}"/>
                                  -
                                 <input type="text" style = "width:100px;"  name="homePhoneNumber1" th:value="${form.homePhoneNumber1}"/>
@@ -224,7 +231,8 @@
                                 <input type="text" style = "width:100px;"  name="homePhoneNumber2" th:value="${form.homePhoneNumber2}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('mobilePhoneNumber')} ? 'error'">
-                                <label>携帯電話番号(半角数字)</label>
+                                <font color="blue">任意</font>
+                                <label>電話番号2(携帯)(半角数字)</label>
                                 <input type="text" style = "width:100px;" name="mobilePhoneNumber" th:value="${form.mobilePhoneNumber}"/>
                                  -
                                 <input type="text" style = "width:100px;" name="mobilePhoneNumber1" th:value="${form.mobilePhoneNumber1}"/>
@@ -232,15 +240,18 @@
                                 <input type="text" style = "width:100px;" name="mobilePhoneNumber2" th:value="${form.mobilePhoneNumber2}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('emailAddress')} ? 'error'">
+                                <font color="red">必須</font>
                                 <label>メールアドレス(半角英数字)</label>
                                 <input type="text" name="emailAddress" th:value="${form.emailAddress}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('spouse')} ? 'error'">
+                                <font color="red">必須</font>
                                 <label>配偶者有無</label>
                                 <input type="radio" name="spouse" value="1" th:checked="${form.spouse}=='1'"/>配偶者あり
                                 <input type="radio" name="spouse" value="0" th:checked="${form.spouse}=='0'"/>配偶者なし
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('houseClassification')} ? 'error'">
+                                <font color="red">必須</font>
                                 <label>お住まい</label>
                                 <input type="radio" name="houseClassification" value="自己所有" th:checked="${form.houseClassification}=='自己所有'"/>本人名義の一戸建・マンション
                                 <input type="radio" name="houseClassification" value="家族所有" th:checked="${form.houseClassification}=='家族所有'"/>家族名義の一戸建・マンション
@@ -253,14 +264,17 @@
                                 <input type="radio" name="houseClassification" value="その他" th:checked="${form.houseClassification}=='その他'"/>その他
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('debt')} ? 'error'">
+                                <font color="red">必須</font>
                                 <label>ローン等のお借り入れ金額(半角数字)</label>
                                 <input type="text" class="number" name="debt" th:value="${form.debt}"/><span class="unit">万円</span>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('income')} ? 'error'">
+                                <font color="red">必須</font>
                                 <label>昨年の所得(半角数字)</label>
                                 <input type="text" class="number" name="income" th:value="${form.income}"/><span class="unit">万円</span>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('job')} ? 'error'">
+                                <font color="red">必須</font>
                                 <label>ご職業</label>
                                 <input type="radio" name="job" value="経営自営" th:checked="${form.job}=='経営自営'"/>経営・自営業
                                 <input type="radio" name="job" value="会社員" th:checked="${form.job}=='会社員'"/>会社員
