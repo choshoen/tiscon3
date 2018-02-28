@@ -106,17 +106,28 @@ public class CardOrderForm extends FormBase {
     @Size(max = 255)
     private String employerName;
 
-    @Size(max = 8)
-    @Pattern(regexp = "^([0-9]{3}-[0-9]{4})?$")
+    /*@Size(max = 8)
+    @Pattern(regexp = "^([0-9]{3}-[0-9]{4})?$")*/
+    @Size(max = 3)
+    @Pattern(regexp = "[0-9]{3}")
     private String employerZipCode;
+    @Size(max = 4)
+    @Pattern(regexp = "[0-9]{4}")
     private String employerZipCode1;
+
     @Size(max = 255)
     private String employerAddress;
 
-    @Size(max = 13)
-    @Pattern(regexp = "^(0[0-9]{1,3}-[0-9]{2,4}-[0-9]{4})?$")
+    /*@Size(max = 13)
+    @Pattern(regexp = "^(0[0-9]{1,3}-[0-9]{2,4}-[0-9]{4})?$")*/
+    @Size(max = 3)
+    @Pattern(regexp = "0[0-9]{1,3}")
     private String employerPhoneNumber;
+    @Size(max = 4)
+    @Pattern(regexp = "[0-9]{2,4}")
     private String employerPhoneNumber1;
+    @Size(max = 4)
+    @Pattern(regexp = "[0-9]{4}")
     private String employerPhoneNumber2;
 
     @Size(max = 255)

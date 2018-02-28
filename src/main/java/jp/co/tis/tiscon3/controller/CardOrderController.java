@@ -55,8 +55,15 @@ public class CardOrderController {
     public HttpResponse inputJob(CardOrderForm form) {
         // エラーを出したくないので強制的にエラーを消す.
         form.setErrors(null);
-
-        return templateEngine.render("cardOrder/job", "form", form);
+        CardOrder c=new CardOrder();
+        String jobname=c.getJob();
+        System.out.println(jobname);
+        //if(jobname.equals("経営・自営業")) {
+            return templateEngine.render("cardOrder/job", "form", form);
+        //}else{
+          //  create(form);
+        //}
+        //return null;
     }
 
     /**
