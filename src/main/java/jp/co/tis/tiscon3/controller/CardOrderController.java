@@ -45,6 +45,7 @@ public class CardOrderController {
      */
     public HttpResponse inputUser() {
         return templateEngine.render("cardOrder/user", "form", new CardOrderForm());
+
     }
 
     /**
