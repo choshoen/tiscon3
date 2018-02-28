@@ -45,10 +45,6 @@ public class CardOrder {
     String zipCode;
 
     /**  */
-    @Column(name = "ZIP_CODE1")
-    String zipCode1;
-
-    /**  */
     @Column(name = "ADDRESS")
     String address;
 
@@ -91,10 +87,6 @@ public class CardOrder {
     /**  */
     @Column(name = "EMPLOYER_ZIP_CODE")
     String employerZipCode;
-
-    /**  */
-    @Column(name = "EMPLOYER_ZIP_CODE1")
-    String employerZipCode1;
 
     /**  */
     @Column(name = "EMPLOYER_ADDRESS")
