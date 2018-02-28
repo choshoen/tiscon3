@@ -29,10 +29,8 @@
                             <div class="field" th:classappend="${form.hasErrors('kanjiName')} ? 'error'">
 
                                 <label>お名前（漢字） (例)姓:山田　名：太郎</label>
-                                姓：
-                                <input type="text" style = "width:150px;" name="kanjiName" th:value="${form.kanjiName}"/>
-                                名：
-                                <input type="text" style = "width:150px;" name="kanjiName1" th:value="${form.kanjiName1}"/>
+                                姓：<input type="text" style = "width:150px;" name="kanjiName" th:value="${form.kanjiName}"/>
+                                名：<input type="text" style = "width:150px;" name="kanjiName1" th:value="${form.kanjiName1}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('kanaName')} ? 'error'">
                                 <label>お名前（カナ）(例)姓:ヤマダ　名：タロウ</label>

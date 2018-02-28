@@ -32,26 +32,50 @@ public class CardOrderForm extends FormBase {
     @Size(max = 6)
     private String gender;
 
-    @NotBlank
+    /*@NotBlank
     @Size(max = 8)
-    @Pattern(regexp = "^[0-9]{3}-[0-9]{4}$")
+    @Pattern(regexp = "^[0-9]{3}-[0-9]{4}$")*/
+    @NotBlank
+    @Size(max = 3)
+    @Pattern(regexp = "[0-9]{3}")
     private String zipCode;
+    @NotBlank
+    @Size(max = 4)
+    @Pattern(regexp = "[0-9]{4}")
     private String zipCode1;
+
     @NotBlank
     @Size(max = 255)
     private String address;
 
+    /*@NotBlank
+    @Size(max = 13)
+    @Pattern(regexp = "^0[0-9]{1,3}-[0-9]{2,4}-[0-9]{4}$")*/
     @NotBlank
-    @Size(max = 13)
-    @Pattern(regexp = "^0[0-9]{1,3}-[0-9]{2,4}-[0-9]{4}$")
+    @Size(max = 3)
+    @Pattern(regexp = "^0[0-9]{1,3}")
     private String homePhoneNumber;
+    @NotBlank
+    @Size(max = 4)
+    @Pattern(regexp = "[0-9]{2,4}")
     private String homePhoneNumber1;
+    @NotBlank
+    @Size(max = 4)
+    @Pattern(regexp = "[0-9]{4}$")
     private String homePhoneNumber2;
-    @Size(max = 13)
-    @Pattern(regexp = "^((070|080|090)-[0-9]{4}-[0-9]{4})?$")
+
+    /*@Size(max = 13)
+    @Pattern(regexp = "^((070|080|090)-[0-9]{4}-[0-9]{4})?$")*/
+    @Size(max = 3)
+    @Pattern(regexp = "^(070|080|090)")
     private String mobilePhoneNumber;
+    @Size(max = 4)
+    @Pattern(regexp = "[0-9]{4}")
     private String mobilePhoneNumber1;
+    @Size(max = 4)
+    @Pattern(regexp = "[0-9]{4}")
     private String mobilePhoneNumber2;
+
     @NotBlank
     @Size(max = 255)
     @Email
