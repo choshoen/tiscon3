@@ -1,5 +1,6 @@
 package jp.co.tis.tiscon3.form;
 
+import jp.co.tis.tiscon3.entity.CardOrder;
 import lombok.Data;
 
 import javax.validation.constraints.*;

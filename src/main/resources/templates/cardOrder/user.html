@@ -200,7 +200,7 @@
                             <div class="field">
                                 <label>郵便番号(半角数字)</label>
                             </div>
-                            <div class="field" style="float:left;width:100px" th:classappend="${form.hasErrors('zipCode')} ? 'error'">
+                                <div style="float:left;width:100px" th:classappend="${form.hasErrors('zipCode')} ? 'error'">
                                 <!-- ▼郵便番号入力フィールド(3桁+4桁) -->
                                 <input type="text" name="zipCode" size="4" maxlength="3" th:value="${form.zipCode}"/>
                             </div>

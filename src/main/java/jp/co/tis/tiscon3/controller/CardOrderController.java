@@ -54,15 +54,23 @@ public class CardOrderController {
      */
     public HttpResponse inputJob(CardOrderForm form) {
         // エラーを出したくないので強制的にエラーを消す.
-        form.setErrors(null);
-        CardOrder c=new CardOrder();
-        String jobname=c.getJob();
+        //form.setErrors(null);
+        String jobname=form.getJob();
         System.out.println(jobname);
-        //if(jobname.equals("経営・自営業")) {
+        if(jobname.equals("経営自営")||jobname.equals("会社員")||jobname.equals("契約派遣")||jobname.equals("公務員")||jobname.equals("民間団体")||jobname.equals("他有職")) {
+            form.setErrors(null);
             return templateEngine.render("cardOrder/job", "form", form);
-        //}else{
-          //  create(form);
-        //}
+        }/*else{
+            if (form.hasErrors()) {
+                return templateEngine.render("cardOrder/user", "form", form);
+            }
+            CardOrder cardOrder = beans.createFrom(form, CardOrder.class);
+
+            cardOrderDao.insert(cardOrder);
+
+            return redirect(getClass(), "completed", SEE_OTHER);
+        }*/
+        return templateEngine.render("cardOrder/user", "form", form);
         //return null;
     }
 
