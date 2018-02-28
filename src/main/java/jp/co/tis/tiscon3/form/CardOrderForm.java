@@ -32,16 +32,20 @@ public class CardOrderForm extends FormBase {
     private String yearOfBirth;
 
     @NotBlank
+    private String monthOfBirth;
+
+    @NotBlank
+    private String dayOfBirth;
+
+    @NotBlank
     @Size(max = 6)
     private String gender;
 
-    /*@NotBlank
-    @Size(max = 8)
-    @Pattern(regexp = "^[0-9]{3}-[0-9]{4}$")*/
     @NotBlank
     @Size(max = 3)
-    @Pattern(regexp = "[0-9]{3}")
+    @Pattern(regexp = "^[0-9]{3}$")
     private String zipCode;
+
     @NotBlank
     @Size(max = 4)
     @Pattern(regexp = "[0-9]{4}")
@@ -109,10 +113,16 @@ public class CardOrderForm extends FormBase {
     @Size(max = 255)
     private String employerName;
 
-    @Size(max = 8)
-    @Pattern(regexp = "^([0-9]{3}-[0-9]{4})?$")
+    @NotBlank
+    @Size(max = 3)
+    @Pattern(regexp = "^[0-9]{3}$")
     private String employerZipCode;
+
+    @NotBlank
+    @Size(max = 4)
+    @Pattern(regexp = "^[0-9]{4}$")
     private String employerZipCode1;
+
     @Size(max = 255)
     private String employerAddress;
 
