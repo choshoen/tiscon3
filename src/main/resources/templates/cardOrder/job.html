@@ -7,6 +7,7 @@
     <title>お勤め先の入力</title>
 
     <script src="/assets/js/metrixir.client.js"></script>
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 </head>
 <body>
 <div class="full height image" layout:fragment="content">
@@ -32,17 +33,26 @@
                                 <label>お勤め先名</label>
                                 <input type="text" name="employerName" th:value="${form.employerName}"/>
                             </div>
-                            <div class="field" th:classappend="${form.hasErrors('employerZipCode')} ? 'error'">
 
+                            <div class="field">
                                 <label>お勤め先郵便番号(半角数字)</label>
-                                <input type="text"  style = "width:100px;" name="employerZipCode" th:value="${form.employerZipCode}"/>
-                                 -
-                                <input type="text" style = "width:100px;"  name="employerZipCode1" th:value="${form.employerZipCode1}"/>
+                            </div>
+                            <div class="field" style="float:left;width:100px" th:classappend="${form.hasErrors('employerZipCode')} ? 'error'">
+                                <!-- ▼郵便番号入力フィールド(3桁+4桁) -->
+                                <input type="text" name="employerZipCode" size="4" maxlength="3" th:value="${form.employerZipCode}"/>
+                            </div>
+                            <div style="float:left;">－ </div>
+                            <div style="float:left;width:100px" th:classappend="${form.hasErrors('employerZipCode1')} ? 'error'">
+                                <input type="text" name="employerZipCode1" size="5" maxlength="4" onKeyUp="AjaxZip3.zip2addr('employerZipCode','employerZipCode1','employerAddress','employerAddress');" th:value="${form.employerZipCode1}"/>
+                            </div>
+                            <div class="field">
+                                <label>お勤め先住所（町名番地建物名）</label>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employerAddress')} ? 'error'">
-                                <label>お勤め先住所</label>
-                                <input type="text" name="employerAddress" th:value="${form.employerAddress}"/>
+                                <!-- ▼住所入力フィールド(都道府県+以降の住所) -->
+                                <input type="text" name="employerAddress" size="40" th:value="${form.employerAddress}"/>
                             </div>
+
                             <div class="field" th:classappend="${form.hasErrors('employerPhoneNumber')} ? 'error'">
 
                                 <label>お勤め先電話番号(半角数字)</label>
@@ -104,6 +114,8 @@
                             <input type="hidden" name="alphabetName1" th:value="${form.alphabetName1}"/>
                             <input type="hidden" name="gender" th:value="${form.gender}"/>
                             <input type="hidden" name="yearOfBirth" th:value="${form.yearOfBirth}"/>
+                            <input type="hidden" name="monthOfBirth" th:value="${form.monthOfBirth}"/>
+                            <input type="hidden" name="dayOfBirth" th:value="${form.dayOfBirth}"/>
                             <input type="hidden" name="zipCode" th:value="${form.zipCode}"/>
                             <input type="hidden" name="zipCode1" th:value="${form.zipCode1}"/>
                             <input type="hidden" name="address" th:value="${form.address}"/>
